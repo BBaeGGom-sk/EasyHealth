@@ -28,6 +28,8 @@ dependencies {
     runtimeOnly 'com.h2database:h2'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    implementation 'javax.xml.bind:jaxb-api:2.3.1' // JDK8 이후 버전에서 추가해줘야함
 }
 
 tasks.named('test') {
@@ -39,11 +41,11 @@ tasks.named('bootBuildImage') {
     environment = ['BP_NATIVE_IMAGE': 'true']
 }
 
-tasks.named('hibernate') {
-    enhance {
-        enableLazyInitialization = true
-        enableDirtyTracking = true
-        enableAssociationManagement = true
-        enableExtendedEnhancement = false
-    }
-}
+//tasks.named('hibernate') {
+//    enhance {
+//        enableLazyInitialization = true
+//        enableDirtyTracking = true
+//        enableAssociationManagement = true
+//        enableExtendedEnhancement = false
+//    }
+//}
